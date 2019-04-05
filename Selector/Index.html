@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery Selector Tutorial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Add some information about the album below, the author, or any other
+                            background context. Make it a few sentences long so folks can pick up some informative
+                            tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+                        viewBox="0 0 24 24" focusable="false">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" /></svg>
+                    <strong>Album</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main role="main">
+
+        <section class="jumbotron text-center" style="margin-bottom: 0px;">
+            <div class="container">
+                <h1 class="jumbotron-heading">Jquery 选择器使用</h1>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选中所有元素</p>
+                                <p>
+                                    All Selector ("*")<br>
+                                    <code>
+                                            $("*")
+                                    </code>
+                                </p>
+
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn1" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择指定属性值等于给定字符串或以该字符串为前缀（该字符串后跟一个连字符“-” ）的元素。</p>
+                                <code>
+                                        <pre>$('a[hreflang|="en"]')</pre>
+                                        <a href="example.html" hreflang="en">Some text</a>
+                                        <a href="example.html" hreflang="en-UK">Some other text</a>
+                                        <a href="example.html" hreflang="english">will not be outlined</a>
+                                </code>
+                                </p>
+
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn2" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择指定属性具有包含一个给定的子字符串的元素。（选择给定的属性是以包含某些值的元素）</p>
+                                <code>
+                                            <pre>$('input[name*="man"]')</pre>
+                                            <input name="man-news" value="man-news"/>
+ 
+  <input name="milkman" value="milkman" />
+  <input name="letterman2" value="letterman2"/>
+  <input name="newmilk"  value="newmilk"/>
+                                    </code>
+
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn3" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择指定属性是给定值的元素。</p>
+                                <code>
+                                                <pre>$('input[value="milkman"]')</pre>
+                                                <input name="man-news" value="man-news"/>
+     
+      <input name="milkman" value="milkman" />
+      <input name="letterman2" value="letterman2"/>
+      <input name="newmilk"  value="newmilk"/>
+                                        </code>
+
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn4" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择所有按钮元素和类型为按钮的元素</p>
+
+                                <code>
+                                            <pre>$(":button")</pre>
+                                            <input type="button" value="Input Button"/>
+                                            <input type="checkbox" />
+                                            <input type="file" />
+                                            <input type="hidden" />
+                                    </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn5" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择所有指定“parent”元素中指定的"child"的直接子元素。</p>
+
+                                <code>
+                                                <pre>$("ul.topnav > li")</pre>
+                                                <ul class="topnav">
+                                                        <li>Item 1</li>
+                                                        <li>Item 2
+                                                          <ul><li>Nested item 1</li><li>Nested item 2</li><li>Nested item 3</li></ul>
+                                                        </li>
+                                                        <li>Item 3</li>
+                                                      </ul>
+                                        </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn6" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">选择给定的祖先元素的所有后代元素。</p>
+
+                                <code>
+                                                    <pre>$("form input")</pre>
+                                                    <form>
+                                                            <div>Form is surrounded by the green outline</div>
+                                                            <label>Child:</label>
+                                                            <input name="name" />
+                                                         
+                                                            <fieldset>
+                                                              <label>Grandchild:</label>
+                                                              <input name="newsletter" />
+                                                            </fieldset>
+                                                         
+                                                          </form>
+                                            </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn7" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">在匹配的集合中选择索引值为index的元素。</p>
+
+                                <code>
+                                                        <pre>$("td:eq(2)")</pre>
+                                                        <table class="table table-border">
+                                                                <tr><td>TD #0</td><td>TD #1</td><td>TD #2</td></tr>
+                                                                <tr><td>TD #3</td><td>TD #4</td><td>TD #5</td></tr>
+                                                                <tr><td>TD #6</td><td>TD #7</td><td>TD #8</td></tr>
+                                                              </table>
+                                                </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn8" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">将每一个选择器匹配到的元素合并后一起返回。</p>
+
+                                <code>
+                                                            <pre>$("div[class='title'],span#word,p.myClass")</pre>
+                                                            <div class="title">class div</div>
+ 
+  <p class="myClass">p class="myClass"</p>
+  <p class="notMyClass">p class="notMyClass"</p>
+  <span id="word">span</span>
+                                                    </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn9" type="button"
+                                            class="btn btn-sm btn-outline-secondary">测试</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card mb-12 shadow-sm">
+
+                            <div class="card-body">
+                                <p class="card-text">题目：选中表格中的特定元素？</p>
+
+                                <code>
+
+                                        <table name="table" class="table table-bordered">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First</th>
+                                                    <th scope="col">Last</th>
+                                                    <th scope="col">Handle</th>
+                                                    <th scope="col">测试</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                    <td><button name="rowbutton" type="button" class="btn btn-sm btn-outline-secondary" id="btn01">取当前行中DT中的text内容</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">2</th>
+                                                    <td><input class="form-control form-control-sm" type="text" name="fristname" value="Jacob"> </td>
+                                                    <td><input  class="form-control form-control-sm" type="text" name="lastname" value="Thornton"> </td>
+                                                    <td><select class="form-control form-control-sm" name="handle">
+                                                            <option value ="volvo">Volvo</option>
+                                                            <option value ="saab">Saab</option>
+                                                            <option value="opel">Opel</option>
+                                                            <option value="audi">Audi</option>
+                                                    </select></td>
+                                                    <td><button name="rowbutton" type="button" class="btn btn-sm btn-outline-secondary" id="btn02">取当前行所有Select元素</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">3</th>
+                                                    <td><input class="form-control form-control-sm" type="text" name="fristname" value="Larry"> </td>
+                                                    <td><input  class="form-control form-control-sm" type="text" name="lastname" value="Bird"> </td>
+                                                    <td><select class="form-control form-control-sm" name="handle">
+                                                            <option value ="volvo">Volvo</option>
+                                                            <option value ="saab">Saab</option>
+                                                            <option value="opel">Opel</option>
+                                                            <option value="audi">Audi</option>
+                                                    </select></td>
+                                                    <td><button name="rowbutton" type="button" class="btn btn-sm btn-outline-secondary" id="btn03">取当前行所有元素</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                </code>
+
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button id="btn04" type="button"
+                                            class="btn btn-sm btn-outline-secondary">取出个表个中所有元素</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(() => {
+            console.log('Jquery .....');
+            //Select all
+            $('#btn1').click(function () {
+                console.log($('*'));
+                $('*').each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn2').click(function () {
+                console.log($('a[hreflang|="en"]'));
+                $('a[hreflang|="en"]').each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn3').click(function () {
+                console.log($('input[name*="man"]'));
+                $('input[name*="man"]').each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn4').click(function () {
+                console.log($('input[value="milkman"]'));
+                $('input[value="milkman"]').each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn5').click(function () {
+                console.log($(":button"));
+                $(":button").each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn6').click(function () {
+                console.log($("ul.topnav > li"));
+                $("ul.topnav > li").each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn7').click(function () {
+                console.log($("form input"));
+                $("form input").each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn8').click(function () {
+                console.log($("td"));
+                $("td:eq(2)").each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn9').click(function () {
+                console.log($("div[class='title'],span#word,p.myClass"));
+                $("div[class='title'],span#word,p.myClass").each(function (index, item) {
+                    console.log(item);
+
+                });
+
+            })
+            $('#btn01').click(() => {
+                var td = $('table[name="table"] > tbody > tr:eq(0) > td');
+                td.each((index, item) => {
+                    console.log(item);
+                })
+
+            });
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>
